@@ -9,6 +9,100 @@ $pale-cyan: hsl(193, 100%, 96%);
 $dark-cyan: hsl(192, 100%, 9%);
 $gray-blue: hsl(208, 11%, 55%);
 
+//Fonts
+
+$header-font: 'Poppins', sans-serif;
+$regular-font: 'Open Sans', sans-serif;
+
+* {
+    box-sizing: content-box;
+}
+
+body {
+    font-size: 18px;
+    font-family: $regular-font;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    font-family: $header-font;
+}
+
+section {
+    width: 100vw;
+}
+
+section:first-of-type {
+    background-image: url('../images/bg-hero-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $pale-cyan;
+}
+
+.header {
+    padding: 1.5em;
+    height: 2em;
+    position: relative;
+
+    svg {
+        scale: 0.5;
+        position: absolute;
+        left: -2em;
+    }
+
+    button {
+        position: absolute;
+        right: 2em;
+
+        font-family: $regular-font;
+        font-weight: 700;
+
+        border: none;
+        background-color: white;
+        border-radius: 20px;
+        width: 8em;
+        height: 35%;
+        box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.3);
+    }
+}
+
+.hero {
+    padding: 0 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    * {
+        margin-bottom: 2em;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    span {
+        text-align: center;
+    }
+
+    button {
+        width: 60%;
+        border: none;
+        border-radius: 20px;
+        background-color: $pink;
+        color: white;
+
+        font-family: $regular-font;
+        font-weight: 700;
+        height: 3em;
+        box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+    }
+
+    img {
+        width: 100%;
+    }
+}
 
 .attribution {
     font-size : 11px;
