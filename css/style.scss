@@ -25,12 +25,12 @@ body {
     padding: 0;
 }
 
-h1, h2 {
+h1, h4 {
     font-family: $header-font;
 }
 
 section {
-    width: 100vw;
+    width: 100%;
 }
 
 section:first-of-type {
@@ -75,23 +75,20 @@ section:first-of-type {
     align-items: center;
 
     * {
-        margin-bottom: 2em;
+        margin-bottom: 1em;
     }
 
-    h1 {
-        text-align: center;
-    }
-
-    span {
+    h1, span {
         text-align: center;
     }
 
     button {
-        width: 60%;
+        width: 80%;
         border: none;
         border-radius: 20px;
         background-color: $pink;
         color: white;
+        margin-bottom: 4em;
 
         font-family: $regular-font;
         font-weight: 700;
@@ -101,6 +98,97 @@ section:first-of-type {
 
     img {
         width: 100%;
+    }
+}
+
+section:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.card {
+    width: 70%;
+    margin-top: 2em;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.15);
+    border-radius: 15px;
+    padding: 2em;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+
+    * {
+        margin-top: 10px;
+    }
+
+    h4 {
+        margin-bottom: 5px;
+    }
+
+    h4, span {
+        width: 100%;
+        text-align: center;
+    }
+
+    span {
+        font-size: 14px;
+        line-height: 1.5em;
+        color: $gray-blue;
+    }
+
+    img {
+        margin-bottom: 2em;
+        width: 100%;
+    }
+}
+
+section:nth-of-type(3) {
+    height: 7em;
+    padding: 1em;
+    padding-top: 2em;
+    width: 85%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 20px;
+    transform: translateY(70px);
+
+    background-color: white;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.12);
+
+    button {
+        padding: 1em;
+        width: 65%;
+        border: none;
+        border-radius: 30px;
+        background-color: $pink;
+        color: white;
+        margin-bottom: 4em;
+
+        font-family: $regular-font;
+        font-weight: 700;
+        box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.3);
+    }
+}
+
+footer {
+    background-color: $dark-cyan;
+    color: $pale-cyan;
+    padding-top: 8em;
+    height: 25em;
+
+    svg {
+        color: white;
+    }
+
+    ul {
+        list-style: none;
     }
 }
 
