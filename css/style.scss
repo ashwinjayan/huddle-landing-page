@@ -222,6 +222,7 @@ section:nth-of-type(2) {
             text-align: left;
             grid-area: title;
             align-self: flex-end;
+            padding-left: 4.5em;
         }
 
         span {
@@ -229,6 +230,7 @@ section:nth-of-type(2) {
             grid-area: subtitle;
             justify-self: flex-start;
             width: 80%;
+            padding-left: 3em;
         }
     }
 }
@@ -273,6 +275,14 @@ section:nth-of-type(3) {
         font-weight: 700;
         box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.3);
     }
+
+    @media only screen and (min-width:768px) {
+        width: 50%;
+
+        button {
+            width: 35%;
+        }
+    }
 }
 
 footer {
@@ -283,8 +293,7 @@ footer {
     height: fit-content;
     position: relative;
 
-    display: flex;
-    flex-direction: column;
+    display: grid;
 
     .location,
     .phone,
@@ -343,9 +352,58 @@ footer {
         font-size: 0.7em;
         text-align: center;
     }
+
+    @media only screen and (min-width:768px) {
+        padding-left: 3em;
+        padding-right: 3em;
+        grid-template-columns: 1fr 1fr 20%;
+        grid-template-rows: 2fr 1fr 2fr;
+        grid-template-areas: "contact1 links social1"
+        "contact2 links social2"
+        "contact3 links social3";
+
+        svg {
+            left: 20px;
+        }
+
+        .location {
+            width: 80%;
+            grid-area: contact1;
+            align-content: flex-end;
+        }
+
+        .phone {
+            grid-area: contact2;
+            align-content: center;
+        }
+
+        .email {
+            grid-area: contact3;
+            align-content: flex-start;
+        }
+
+        ul {
+            height: 50%;
+            width: 80%;
+            grid-area: links;
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+        .social-icons {
+            grid-area: social1;
+        }
+
+        &>span {
+            grid-area: social3;
+        }
+    }
 }
 
 .attribution {
+    position: absolute;
+    left: 5%;
+    bottom: 0;
     font-size : 11px;
     text-align: center;
 }
