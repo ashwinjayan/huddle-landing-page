@@ -170,6 +170,7 @@ section:nth-of-type(3) {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 2;
   border-radius: 20px;
   -webkit-transform: translateY(70px);
           transform: translateY(70px);
@@ -195,16 +196,91 @@ section:nth-of-type(3) button {
 footer {
   background-color: #00252e;
   color: #ebfbff;
-  padding-top: 8em;
-  height: 25em;
+  padding: 0 1em;
+  padding-top: 10em;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .location,
+footer .phone,
+footer .email {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 90%;
+      grid-template-columns: 10% 90%;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  margin-top: 1em;
+}
+
+footer .location img,
+footer .phone img,
+footer .email img {
+  margin-top: 0.4em;
 }
 
 footer svg {
+  position: absolute;
+  left: -20px;
+  top: 120px;
   color: white;
+  margin-bottom: 1em;
+  scale: 0.7;
 }
 
 footer ul {
   list-style: none;
+  padding: 0;
+  margin-top: 4em;
+}
+
+footer ul li {
+  margin-bottom: 1em;
+}
+
+footer .social-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .social-icons .icons {
+  margin-right: 1.5em;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #ebfbff;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer > span {
+  margin-top: 2em;
+  font-size: 0.7em;
+  text-align: center;
 }
 
 .attribution {
