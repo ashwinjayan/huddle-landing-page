@@ -453,8 +453,8 @@ footer > span {
         align-content: flex-start;
   }
   footer .social-icons {
-    -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
     -ms-grid-row: 1;
     -ms-grid-column: 3;
     grid-area: social1;
