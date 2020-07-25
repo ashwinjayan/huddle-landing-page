@@ -129,6 +129,8 @@ section:first-of-type {
     text-align: left;
     -ms-grid-column-align: left;
         justify-self: left;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     width: 50%;
   }
   .hero span {
@@ -146,7 +148,10 @@ section:first-of-type {
     grid-area: button;
     -ms-grid-column-align: left;
         justify-self: left;
-    width: 50%;
+    margin-top: -2em;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    width: 40%;
     height: 3.5em;
   }
   .hero img {
@@ -216,8 +221,8 @@ section:nth-of-type(2) {
   .card {
     -ms-grid-columns: 50% 50%;
         grid-template-columns: 50% 50%;
-    -ms-grid-rows: 50% 50%;
-        grid-template-rows: 50% 50%;
+    -ms-grid-rows: 45% 55%;
+        grid-template-rows: 45% 55%;
         grid-template-areas: "image title" "image subtitle";
     width: 85%;
     height: 15em;
@@ -432,6 +437,8 @@ footer > span {
         align-content: flex-start;
   }
   footer ul {
+    -webkit-transform: translateY(-55px);
+            transform: translateY(-55px);
     height: 50%;
     width: 80%;
     -ms-grid-row: 1;
@@ -442,8 +449,12 @@ footer > span {
     display: grid;
     -ms-grid-columns: 50% 50%;
         grid-template-columns: 50% 50%;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
   }
   footer .social-icons {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
     -ms-grid-row: 1;
     -ms-grid-column: 3;
     grid-area: social1;
@@ -456,11 +467,16 @@ footer > span {
 }
 
 .attribution {
-  position: absolute;
-  left: 5%;
-  bottom: 0;
   font-size: 11px;
   text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .attribution {
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+  }
 }
 
 .attribution a {
