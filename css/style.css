@@ -27,6 +27,14 @@ section:first-of-type {
   background-color: #ebfbff;
 }
 
+@media only screen and (min-width: 768px) {
+  section:first-of-type {
+    background-image: url("../images/bg-hero-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
 .header {
   padding: 1.5em;
   height: 2em;
@@ -46,28 +54,31 @@ section:first-of-type {
   font-weight: 700;
   border: none;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 200px;
   width: 8em;
   height: 35%;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (min-width: 768px) {
+  .header svg {
+    left: 1em;
+  }
+  .header button {
+    right: 4em;
+    width: 10em;
+    height: 40%;
+  }
 }
 
 .hero {
   padding: 0 2em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .hero * {
@@ -81,7 +92,7 @@ section:first-of-type {
 .hero button {
   width: 80%;
   border: none;
-  border-radius: 20px;
+  border-radius: 500px;
   background-color: #ff52bf;
   color: white;
   margin-bottom: 4em;
@@ -94,6 +105,56 @@ section:first-of-type {
 
 .hero img {
   width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "header image" "para image" "button image";
+    padding: 0 4em;
+  }
+  .hero * {
+    margin-bottom: 0.5em;
+  }
+  .hero h1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: header;
+    text-align: left;
+    -ms-grid-column-align: left;
+        justify-self: left;
+    width: 50%;
+  }
+  .hero span {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: para;
+    text-align: left;
+    -ms-grid-column-align: left;
+        justify-self: left;
+    width: 85%;
+  }
+  .hero button {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: button;
+    -ms-grid-column-align: left;
+        justify-self: left;
+    width: 50%;
+    height: 3.5em;
+  }
+  .hero img {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 2;
+    grid-area: image;
+  }
 }
 
 section:nth-of-type(2) {
@@ -149,6 +210,52 @@ section:nth-of-type(2) {
 .card img {
   margin-bottom: 2em;
   width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .card {
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: 50% 50%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: "image title" "image subtitle";
+    width: 85%;
+    height: 15em;
+    padding-left: 2em;
+  }
+  .card img {
+    -ms-grid-column-align: center;
+        justify-self: center;
+    margin-left: 2em;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: image;
+    height: 100%;
+    width: auto;
+  }
+  .card h4 {
+    text-align: left;
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: title;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  .card span {
+    text-align: left;
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: subtitle;
+    justify-self: flex-start;
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .card:nth-of-type(odd) {
+        grid-template-areas: "title image" "subtitle image";
+  }
 }
 
 section:nth-of-type(3) {
