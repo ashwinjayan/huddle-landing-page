@@ -103,10 +103,10 @@ section:first-of-type {
 
 .hero {
     margin-top: 2em;
+    height: 100%;
     display      : grid;
     justify-items: center;
     align-content: center;
-    width        : fit-content;
 
     * {
         margin-bottom: 1em;
