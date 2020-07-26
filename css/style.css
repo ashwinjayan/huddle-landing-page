@@ -10,17 +10,32 @@ body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
-}
-
-h1, h4 {
-  font-family: "Poppins", sans-serif;
-}
-
-section {
+  height: 100%;
   width: 100%;
 }
 
+h1,
+h4 {
+  font-family: "Poppins", sans-serif;
+}
+
+section,
+footer {
+  padding: 0 2.5em;
+}
+
+@media only screen and (min-width: 768px) {
+  section,
+  footer {
+    padding: 0 4em;
+  }
+}
+
 section:first-of-type {
+  padding-top: 3em;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   background-image: url("../images/bg-hero-mobile.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -29,6 +44,10 @@ section:first-of-type {
 
 @media only screen and (min-width: 768px) {
   section:first-of-type {
+    min-height: 100vh;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     background-image: url("../images/bg-hero-desktop.svg");
     background-repeat: no-repeat;
     background-size: contain;
@@ -36,56 +55,65 @@ section:first-of-type {
 }
 
 .header {
-  padding: 1.5em;
   height: 2em;
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.header svg {
-  scale: 0.5;
-  position: absolute;
-  left: -2em;
+.header .logo {
+  background-image: url("../images/logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 60%;
+  float: left;
 }
 
 .header button {
-  position: absolute;
-  right: 2em;
+  float: right;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   border: none;
   background-color: white;
   border-radius: 200px;
-  width: 8em;
-  height: 35%;
+  width: 40%;
+  height: 100%;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 @media only screen and (min-width: 768px) {
-  .header svg {
-    left: 1em;
+  .header .logo {
+    width: 100%;
+    height: 100%;
   }
   .header button {
-    right: 4em;
-    width: 10em;
-    height: 40%;
+    width: 12%;
   }
 }
 
 .hero {
-  padding: 0 2em;
+  margin-top: 2em;
   display: -ms-grid;
   display: grid;
   justify-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .hero * {
   margin-bottom: 1em;
 }
 
-.hero h1, .hero span {
+.hero h1,
+.hero span {
   text-align: center;
 }
 
@@ -109,6 +137,7 @@ section:first-of-type {
 
 @media only screen and (min-width: 768px) {
   .hero {
+    margin-top: 3em;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -117,10 +146,6 @@ section:first-of-type {
     -ms-grid-rows: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-areas: "header image" "para image" "button image";
-    padding: 0 4em;
-  }
-  .hero * {
-    margin-bottom: 0.5em;
   }
   .hero h1 {
     -ms-grid-row: 1;
@@ -180,11 +205,11 @@ section:nth-of-type(2) {
 }
 
 .card {
-  width: 70%;
+  width: 90%;
   margin-top: 2em;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  border-radius: 15px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   padding: 2em;
   display: -ms-grid;
   display: grid;
@@ -201,7 +226,8 @@ section:nth-of-type(2) {
   margin-bottom: 5px;
 }
 
-.card h4, .card span {
+.card h4,
+.card span {
   width: 100%;
   text-align: center;
 }
@@ -224,8 +250,8 @@ section:nth-of-type(2) {
     -ms-grid-rows: 45% 55%;
         grid-template-rows: 45% 55%;
         grid-template-areas: "image title" "image subtitle";
-    width: 85%;
-    height: 15em;
+    width: 90%;
+    height: 20em;
     padding-left: 2em;
   }
   .card img {
@@ -285,7 +311,7 @@ section:nth-of-type(3) {
       -ms-flex-align: center;
           align-items: center;
   z-index: 2;
-  border-radius: 20px;
+  border-radius: 10px;
   -webkit-transform: translateY(70px);
           transform: translateY(70px);
   background-color: white;
@@ -309,10 +335,10 @@ section:nth-of-type(3) button {
 
 @media only screen and (min-width: 768px) {
   section:nth-of-type(3) {
-    width: 50%;
+    width: 40%;
   }
   section:nth-of-type(3) button {
-    width: 35%;
+    width: 40%;
   }
 }
 
@@ -338,6 +364,7 @@ footer .email {
       grid-template-columns: 10% 90%;
   -ms-flex-line-pack: end;
       align-content: flex-end;
+  justify-items: left;
   margin-top: 1em;
 }
 
@@ -347,13 +374,13 @@ footer .email img {
   margin-top: 0.4em;
 }
 
-footer svg {
-  position: absolute;
-  left: -20px;
-  top: 120px;
-  color: white;
-  margin-bottom: 1em;
-  scale: 0.7;
+footer .logo {
+  background-image: url("../images/logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 60%;
+  mix-blend-mode: screen;
 }
 
 footer ul {
@@ -407,30 +434,33 @@ footer > span {
     padding-right: 3em;
     -ms-grid-columns: 1fr 1fr 20%;
         grid-template-columns: 1fr 1fr 20%;
-    -ms-grid-rows: 2fr 1fr 2fr;
-        grid-template-rows: 2fr 1fr 2fr;
-        grid-template-areas: "contact1 links social1" "contact2 links social2" "contact3 links social3";
+    -ms-grid-rows: 1fr 2fr 1fr 2fr;
+        grid-template-rows: 1fr 2fr 1fr 2fr;
+        grid-template-areas: "logo logo logo" "contact1 links social1" "contact2 links social2" "contact3 links social3";
   }
-  footer svg {
-    left: 20px;
+  footer .logo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: logo;
   }
   footer .location {
     width: 80%;
-    -ms-grid-row: 1;
+    -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: contact1;
     -ms-flex-line-pack: end;
         align-content: flex-end;
   }
   footer .phone {
-    -ms-grid-row: 2;
+    -ms-grid-row: 3;
     -ms-grid-column: 1;
     grid-area: contact2;
     -ms-flex-line-pack: center;
         align-content: center;
   }
   footer .email {
-    -ms-grid-row: 3;
+    -ms-grid-row: 4;
     -ms-grid-column: 1;
     grid-area: contact3;
     -ms-flex-line-pack: start;
@@ -441,7 +471,7 @@ footer > span {
             transform: translateY(-55px);
     height: 50%;
     width: 80%;
-    -ms-grid-row: 1;
+    -ms-grid-row: 2;
     -ms-grid-row-span: 3;
     -ms-grid-column: 2;
     grid-area: links;
@@ -455,12 +485,12 @@ footer > span {
   footer .social-icons {
     -webkit-transform: translateY(-25px);
             transform: translateY(-25px);
-    -ms-grid-row: 1;
+    -ms-grid-row: 2;
     -ms-grid-column: 3;
     grid-area: social1;
   }
   footer > span {
-    -ms-grid-row: 3;
+    -ms-grid-row: 4;
     -ms-grid-column: 3;
     grid-area: social3;
   }
