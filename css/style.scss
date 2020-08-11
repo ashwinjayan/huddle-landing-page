@@ -25,7 +25,6 @@ body {
     font-family: $regular-font;
     margin     : 0;
     padding    : 0;
-    height: 100%;
     width: 100%;
 }
 
@@ -142,7 +141,6 @@ section:first-of-type {
 
     @media only screen and (min-width:768px) {
         margin-top           : 3em;
-        height: 80vh;
         display: grid;
         justify-content: center;
         align-content: center;
@@ -232,7 +230,6 @@ section:nth-of-type(2) {
             "image subtitle";
 
         width       : 90%;
-        height      : 20em;
         padding-left: 2em;
 
         img {
@@ -268,7 +265,6 @@ section:nth-of-type(2) {
 }
 
 section:nth-of-type(3) {
-    height     : 7em;
     padding    : 1em;
     padding-top: 2em;
     width      : 85%;
@@ -315,7 +311,6 @@ footer {
     color           : $pale-cyan;
     padding         : 0 1em;
     padding-top     : 10em;
-    height          : fit-content;
     position        : relative;
 
     display: grid;
